@@ -1,0 +1,62 @@
+<div class="registration-form">
+    <h2>Register</h2>
+    
+    <!-- Form starts here -->
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      
+      <!-- Email Field -->
+      <div>
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="user.email" 
+          name="email" 
+          required 
+          #email="ngModel">
+        <div *ngIf="email.invalid && email.touched" class="error">
+          Email is required and must be valid.
+        </div>
+      </div>
+  
+      <!-- Password Field -->
+      <div>
+        <label for="password">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="user.password" 
+          name="password" 
+          required 
+          minlength="6" 
+          #password="ngModel">
+        <div *ngIf="password.invalid && password.touched" class="error">
+          Password is required and must be at least 6 characters.
+        </div>
+      </div>
+  
+      <!-- Role Field (Drop-down) -->
+      <div>
+        <label for="role">Role:</label>
+        <select 
+          [(ngModel)]="user.role" 
+          name="role" 
+          required 
+          #role="ngModel">
+          <option value="VISITOR">Visitor</option>
+          <option value="DOCTOR">Doctor</option>
+          <option value="COACH">Coach</option>
+          <option value="PLAYER">PLAYER</option>
+          <option value="ADMIN">ADMIN</option>
+          
+        </select>
+        <div *ngIf="role.invalid && role.touched" class="error">
+          Role is required.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  </div>
+  
