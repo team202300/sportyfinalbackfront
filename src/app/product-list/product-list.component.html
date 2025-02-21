@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h2>Product List</h2>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Stock Quantity</th>
+          <th>Creation Date</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.idProduct }}</td>
+          <td>{{ product.productName }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.stockquantity }}</td>
+          <td>{{ product.creationDate }}</td>
+          <td>{{ product.brand }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.footballProductsCategory }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="editProduct(product.idProduct)">Update</button>
+            <button class="btn btn-primary" (click)="showdetailsProduct(product.idProduct)">Details</button>
+            <button class="btn btn-danger" (click)="deleteProduct(product.idProduct)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center">
+        <button (click)="addProduct()" class="btn btn-success">Add Product</button>
+      </div>
+</div>

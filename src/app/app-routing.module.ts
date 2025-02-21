@@ -11,6 +11,14 @@ import { MatchesComponent } from './FrontOffice/matches/matches.component';
 import { PlayersComponent } from './FrontOffice/players/players.component'; 
 import { BlogsComponent } from './FrontOffice/blogs/blogs.component'; 
 import { ContactComponent } from './FrontOffice/contact/contact.component'; 
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductUpdateComponent } from './product-update/product-update.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
+
 
 const routes: Routes = [
   {
@@ -20,7 +28,9 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'widget', component: WidgetsComponent },
       { path: 'tables', component: TablesComponent },
-      { path: 'forms', component: FormsComponent }
+      { path: 'forms', component: FormsComponent } 
+      
+       
     ]
   },
   {
@@ -30,7 +40,14 @@ const routes: Routes = [
       { path: '', component: HomefrontComponent } ,{ path: 'matches', component: MatchesComponent } ,{ path: 'players', component: PlayersComponent },{ path: 'blogs', component: BlogsComponent },{ path: 'contact', component: ContactComponent }
     ]
   },
-  { path: '', redirectTo: 'back-office', pathMatch: 'full' } 
+  { path: '', redirectTo: 'back-office', pathMatch: 'full' } , 
+  { path: 'login', component: LoginComponent } ,
+  { path: 'registre', component: RegistrationComponent } ,
+  { path: 'addpr', component: AddProductComponent } , 
+  { path: 'products', component: ProductListComponent } ,
+  { path: 'product-update/:id', component: ProductUpdateComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent }
+
 ];
 
 @NgModule({

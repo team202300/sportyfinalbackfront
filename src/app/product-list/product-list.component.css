@@ -1,0 +1,47 @@
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse; /* Makes the table look neat */
+    background-color: #f9f9f9; /* Light background color for the table */
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 12px; /* Adds some padding inside cells */
+    border: 1px solid #ddd; /* Light border for better readability */
+}
+
+.table th {
+    background-color: #007bff; /* Blue background for header */
+    color: #ffffff; /* White text for header */
+    font-weight: bold; /* Makes header text bold */
+}
+
+.table td {
+    background-color: #ffffff; /* White background for data rows */
+}
+
+.table tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover for rows */
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px; /* Adds more padding for a bigger button */
+    background-color: #007bff; /* Blue background for the button */
+    color: #fff; /* White text */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Rounds the corners */
+    cursor: pointer; /* Shows pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+}
+
+button:disabled {
+    background-color: #ccc; /* Light gray background when disabled */
+    cursor: not-allowed; /* Changes cursor to indicate it's disabled */
+}
